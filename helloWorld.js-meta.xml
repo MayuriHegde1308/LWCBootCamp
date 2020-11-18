@@ -1,0 +1,10 @@
+p {
+    color: red;
+    font-size: larger;
+}
+h1 {
+    color: blue;
+}
+h2 {
+    color: green;
+}
