@@ -5,12 +5,12 @@ export default class IfElseDemo extends LightningElement {
     isTom = false;
  
     showTimon(){
-        //this.isPumba = false;
+        
         this.isJerry = true;
     }
  
     showPumba(){
         this.isTom = true;
-        //this.isTimon = false;
+        
     }
 }
