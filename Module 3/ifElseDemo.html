@@ -1,0 +1,28 @@
+ <template>
+    <lightning-layout>
+        <div class="slds-m-around_small">
+            <lightning-button variant="brand" label="Show Jerry" 
+            onclick={showJerry} 
+            >
+            </lightning-button>
+        </div>
+        <template if:true={isJerry}>
+            <img src="https://mayuriprojects-dev-ed--c.visualforce.com/resource/1605714249000/Jerry"
+            width="200"
+            height="200"
+            />
+        </template>   
+        <template if:true={isTom}>
+            <img src="https://mayuriprojects-dev-ed--c.visualforce.com/resource/1605718058000/tomcat?"
+                width="200"
+                height="200"
+            />
+        </template>    
+        <div class="slds-m-around_small">
+            <lightning-button variant="brand" label="Show Tom" 
+            onclick={showTom} 
+            >
+            </lightning-button>
+        </div>
+    </lightning-layout>                  
+</template>
