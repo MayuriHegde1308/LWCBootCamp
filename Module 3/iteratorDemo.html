@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="For:Each Demo" icon-name="standard:contact">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class=" " scope="col">
+                        <div class="slds-truncate" title="Index"> Index</div>
+                    </th>
+                    <th class=" " scope="col">
+                        <div class="slds-truncate" title="ID">id</div>
+                    </th>
+                    <th class=" " scope="col">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th>
+                    <th class=" " scope="col">
+                        <div class="slds-truncate" title="Email">Email</div>
+                    </th> 
+                </tr>
+            </thead>
+            <tbody>
+            <template if:true={contacts}>
+                <template for:each={contacts} for:item="con">
+                    <tr class="slds-hint-parent" key={con.Index}> 
+                        <th data-label="Index" scope="row">
+                            <div class="slds-truncate" title="Index">{con.Index}</div>
+                        </th>
+                        <td data-label="id">
+                            <div class="slds-truncate" title="id">{con.id}</div>
+                        </td>
+                        <td data-label="Name">
+                            <div class="slds-truncate" title="Name">{con.Name}</div>
+                        </td>
+                        <td data-label="Email">
+                            <div class="slds-truncate" title="Email">{con.Email}</div>
+                        </td>
+                    </tr>
+                </template>       
+            </template>
+        </tbody>
+        </table>
+    </lightning-card>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-card title="Iterator Demo" icon-name="standard:contact">
+            <div class="slds-border_top"></div>
+            <template iterator:con={contacts}>
+                <div  class="slds-m-around_medium" key={con.value.Id}>{con.value.Name}-{con.value.Email}</div>
+            </template>
+            <div class="slds-border_bottom"></div>
+        </lightning-card>
+    </div>
+</template>
+
