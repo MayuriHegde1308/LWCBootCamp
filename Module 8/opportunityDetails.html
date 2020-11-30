@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Opportunity Details" icon-name="standard:opportunity">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class=" " scope="col">
+                        <div class="slds-truncate" title="Name"> Name</div>
+                    </th>
+                    <th class=" " scope="col">
+                        <div class="slds-truncate" title="CloseDate">CloseDate</div>
+                    </th>
+                    <th class=" " scope="col">
+                        <div class="slds-truncate" title="Amount">Amount</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template if:true={opportunities}>
+                    <template for:each={opportunities} for:item="opp">
+                        <tr class="slds-hint-parent" key={opp.Id}> 
+                            <th data-label="Name" scope="row">
+                                <div class="slds-truncate" title="Name">{opp.Name}</div>
+                            </th>
+                            <td data-label="CloseDate">
+                                <div class="slds-truncate" title="CloseDate">{opp.CloseDate}</div>
+                            </td>
+                            <td data-label="Amount">
+                                <div class="slds-truncate" title="Amount">{opp.Amount}</div>
+                            </td>
+                        </tr>
+                    </template>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>
