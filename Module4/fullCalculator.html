@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Full Calculator" icon-name="custom:custom34">
+        <div class="slds-box slds-theme_shade"> 
+            <lightning-input value={CalcExpression} label="Calc Expression"></lightning-input>
+            <lightning-input value={Result} label="Result"></lightning-input>    
+        </div>  
+      <table class="slds-table">   
+         <tr> 
+            <td><lightning-button variant="neutral" label="1" onclick={handleClick} class="slds-m-left_x-small"></lightning-button> </td> 
+            <td><lightning-button variant="neutral" label="2" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td> 
+            <td><lightning-button variant="neutral" label="3" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td> 
+            <td><lightning-button variant="brand" label="+" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td> 
+         </tr> 
+         <tr> 
+            <td><lightning-button variant="neutral" label="4" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td> 
+            <td><lightning-button variant="neutral" label="5" onclick={handleClick} class="slds-m-left_x-small"></lightning-button> </td> 
+            <td><lightning-button variant="neutral" label="6" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td> 
+            <td><lightning-button variant="brand" label="-" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td> 
+         </tr> 
+         <tr> 
+            <td><lightning-button variant="neutral" label="7" onclick={handleClick} class="slds-m-left_x-small"></lightning-button> </td> 
+            <td><lightning-button variant="neutral" label="8" onclick={handleClick} class="slds-m-left_x-small"></lightning-button> </td> 
+            <td><lightning-button variant="neutral" label="9" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td> 
+            <td><lightning-button variant="brand" label="*" onclick={handleClick} class="slds-m-left_x-small"></lightning-button> </td> 
+         </tr> 
+         <tr> 
+            <td><lightning-button label="CLR" onclick={Clear} class="slds-m-left_x-small"></lightning-button></td> 
+            <td><lightning-button variant="destructive-text" label="0" onclick={handleClick} class="slds-m-left_x-small"></lightning-button> </td> 
+            <td><lightning-button variant="success" label="=" onclick={handleCalculate} class="slds-m-left_x-small"></lightning-button></td> 
+            <td><lightning-button variant="brand" label="/" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td> 
+         </tr> 
+      </table> 
+    </lightning-card> 
+</template>
