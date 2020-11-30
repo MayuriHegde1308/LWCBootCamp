@@ -1,9 +1,7 @@
 import { LightningElement } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class ContactQuickCreate extends LightningElement {
-    //showAccounts=false;
     showOpportunity=false;
-    //showContact=false;
     handleSuccess(event){
         const inputFields = this.template.querySelectorAll(
             'lightning-input-field'
@@ -29,10 +27,4 @@ export default class ContactQuickCreate extends LightningElement {
     showOpprtunities(){
         this.showOpportunity=!this.showOpportunity;
     }
-      /*showAccountFields(){
-        this.showAccounts=!this.showAccounts;
-    }
-    showContactFields(){
-        this.showContact=!this.showContact;
-    }*/
 }
