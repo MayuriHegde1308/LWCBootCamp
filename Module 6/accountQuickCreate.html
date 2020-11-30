@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Account Quick Create" icon-name="standard:account">
+        <lightning-button class="slds-m-top_small" onclick={showAccountFields} label="Show Account Fields" slot="actions">
+        </lightning-button>
+        <lightning-record-edit-form object-api-name="Account" onsuccess={handleSuccess}>
+            <lightning-input-field field-name="Name">
+            </lightning-input-field>
+            <template if:true={showAccounts}>
+                <lightning-input-field field-name='AccountNumber'>
+                </lightning-input-field>
+                <lightning-input-field field-name='Industry'>
+                </lightning-input-field>
+                <lightning-input-field field-name='Site'>
+                </lightning-input-field>
+                <lightning-input-field field-name='AccountSource'>
+                </lightning-input-field>
+                <lightning-input-field field-name='Active__c'>
+                </lightning-input-field>
+                <lightning-input-field field-name='AnnualRevenue'>
+                </lightning-input-field>
+                <lightning-input-field field-name='BillingAddress'>
+                </lightning-input-field>
+                <lightning-input-field field-name='CleanStatus'>
+                </lightning-input-field>
+                <lightning-input-field field-name='CustomerPriority__c'>
+                </lightning-input-field>
+                <lightning-input-field field-name='Phone'>
+                </lightning-input-field>
+            </template>
+            <lightning-button-group class="slds-align_absolute-center">
+                <lightning-button class="slds-p-top_small" onclick={handleCancel}
+                    label="Cancel">
+                </lightning-button>
+                <lightning-button class="slds-p-top_small" type="submit" variant="brand" label="Save">
+                </lightning-button>
+            </lightning-button-group>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
