@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Opportunity Quick Create" icon-name="standard:opportunity">
+        <lightning-button class="slds-m-top_small" onclick={showOpprtunities}
+            label="Show All Opportunity Fields" slot="actions">
+        </lightning-button>
+        <lightning-record-edit-form object-api-name="Opportunity" onsuccess={handleSuccess}>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-input-field field-name="Name">
+                    </lightning-input-field>
+                </div>
+                <div class="slds-col">
+                    <lightning-input-field field-name="CloseDate">
+                    </lightning-input-field>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-input-field field-name="StageName">
+                    </lightning-input-field>
+                </div>
+                <div class="slds-col">
+                    <lightning-input-field field-name="AccountId">
+                    </lightning-input-field>
+                </div>
+            </div>
+            <template if:true={showOpportunity}>
+                <lightning-input-field field-name='Type'>
+                </lightning-input-field>
+                <lightning-input-field field-name='LeadSource'>
+                </lightning-input-field>
+                <lightning-input-field field-name='Amount'>
+                </lightning-input-field>
+                <lightning-input-field field-name='NextStep'>
+                </lightning-input-field>
+                <lightning-input-field field-name='Probability'>
+                </lightning-input-field>
+                <lightning-input-field field-name='CampaignId'>
+                </lightning-input-field>
+                <lightning-input-field field-name='OrderNumber__c'>
+                </lightning-input-field>  
+            </template>
+            <lightning-button-group class="slds-align_absolute-center">
+                <lightning-button class="slds-p-top_small" onclick={handleCancel}
+                    label="Cancel">
+                </lightning-button>
+                <lightning-button class="slds-p-top_small" type="submit" variant="brand" label="Save">
+                </lightning-button>
+            </lightning-button-group>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
