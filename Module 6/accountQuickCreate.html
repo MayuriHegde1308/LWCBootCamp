@@ -1,6 +1,6 @@
 <template>
     <lightning-card title="Account Quick Create" icon-name="standard:account">
-        <lightning-button class="slds-m-top_small" onclick={showOpprtunities} label="Show Account Fields" slot="actions">
+        <lightning-button class="slds-m-top_small" onclick={showAccount} label="Show Account Fields" slot="actions">
         </lightning-button>
         <lightning-record-edit-form object-api-name="Account" onsuccess={handleSuccess}>
             <lightning-input-field field-name="Name">
