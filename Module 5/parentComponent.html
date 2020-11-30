@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Parent" icon-name="action:new_person_account">
+        <div class="slds-grid">
+            <div class="slds-col">
+                <span>
+                    Child One: {status}
+                </span>
+            </div>
+            <div class="slds-col">
+                <span>
+                    Child Two: {status}
+                </span>
+            </div>
+            <div class="slds-col">
+                <span>
+                    Child Three: {status}
+                </span>
+            </div>
+        </div>
+        <div>
+            <c-child-component status={status} noofselects={noofselects} onclick={handleChildClick}></c-child-component>
+        </div>
+    </lightning-card>
+</template>

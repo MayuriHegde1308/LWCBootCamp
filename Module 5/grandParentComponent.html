@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Grand Parent" icon-name="standard:opportunity_contact_role">
+        <div class="slds-grid">
+            <div class="slds-col slds-size_2-of-3 slds-align_absolute-center">
+                <span>
+                    {noofselects} of 3 Children selected
+                </span>
+            </div>
+            <div class="slds-col slds-size_1-of-3 slds-align_absolute-center">
+                <span>
+                    <lightning-button variant="brand" label="Reset All" onclick={handleReset} class="slds-m-left_x-small"></lightning-button>
+                </span>
+            </div>
+        </div>
+        <c-parent-component oncustomclick={handleSelect} status={status} noofselects={noofselects}>
+        </c-parent-component>
+    </lightning-card>
+</template>
