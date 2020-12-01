@@ -1,0 +1,79 @@
+<template>
+    <lightning-card title="Opportunity Quick Create" icon-name="standard:opportunity">
+        <lightning-button class="slds-m-top_small" onclick={showOpprtunities}
+            label="Show Opportunity Fields" slot="actions">
+        </lightning-button>
+        <lightning-record-edit-form object-api-name="Opportunity" onsuccess={handleSuccess}>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-input-field field-name="Name" required>
+                    </lightning-input-field>
+                </div>
+                <div class="slds-col">
+                    <lightning-input-field field-name="CloseDate" required>
+                    </lightning-input-field>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-input-field field-name="StageName" required>
+                    </lightning-input-field>
+                </div>
+                <div class="slds-col">
+                    <lightning-input-field field-name="AccountId" required>
+                    </lightning-input-field>
+                </div>
+            </div>
+            <template if:true={LeadSourcePicklistValues.data}>
+                <lightning-combobox name="progress"
+                                    label="Lead Source"
+                                    value={value}
+                                    placeholder="-Select-"
+                                    options={LeadSourcePicklistValues.data.values}
+                                    onchange={selectionChangeHandler} >
+                </lightning-combobox>
+            </template>
+            <template if:true={TypePicklistValues.data}>
+                <lightning-combobox name="progress"
+                                    label="Type"
+                                    value={value}
+                                    placeholder="-Select-"
+                                    options={TypePicklistValues.data.values}
+                                    onchange={selectionChangeHandler} >
+                </lightning-combobox>
+            </template>
+            <template if:true={showOpportunity}>
+                <lightning-input-field field-name='Type'>
+                </lightning-input-field>
+                <lightning-input-field field-name='LeadSource'>
+                </lightning-input-field>
+                <lightning-input-field field-name='Amount'>
+                </lightning-input-field>
+                <lightning-input-field field-name='NextStep'>
+                </lightning-input-field>
+                <lightning-input-field field-name='Probability'>
+                </lightning-input-field>
+                <lightning-input-field field-name='CampaignId'>
+                </lightning-input-field>
+                <lightning-input-field field-name='OrderNumber__c'>
+                </lightning-input-field>  
+            </template>
+            <lightning-button-group class="slds-align_absolute-center">
+                <lightning-button class="slds-p-top_small" onclick={handleCancel}
+                    label="Cancel">
+                </lightning-button>
+                <lightning-button class="slds-p-top_small" type="submit" variant="brand" label="Save">
+                </lightning-button>
+                <lightning-button class="slds-p-top_small" onclick={validateFields} name="submit" label="Quick Create">
+                </lightning-button>
+                <lightning-button
+            name="new-with-defaults"
+            label="New Opportunity Record"
+            class="slds-p-top_small"
+            variant="brand"
+            onclick={navigateToNewRecordPage}
+        ></lightning-button>
+            </lightning-button-group>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
