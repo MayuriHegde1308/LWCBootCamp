@@ -7,7 +7,7 @@ import INDUSTRY_FIELD from '@salesforce/schema/Account.Industry';
 import Type_FIELD from '@salesforce/schema/Account.Type';
 import { NavigationMixin } from 'lightning/navigation';
 import {encodeDefaultFieldValues} from 'lightning/pageReferenceUtils';
-export default class ContactQuickCreate extends NavigationMixin(LightningElement) {
+export default class AccountQuickCreate extends NavigationMixin(LightningElement) {
     showAccounts=false;
     @wire(getObjectInfo, { objectApiName: ACCOUNT_OBJECT })
     objectInfo;
